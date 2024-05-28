@@ -1,0 +1,58 @@
+schema: '2.0'
+stages:
+  build-dataset:
+    cmd: bin/build-dataset
+    deps:
+    - path: artifacts/data/raw
+      hash: md5
+      md5: 9c07a3e416ce409d3759c07add14a788.dir
+      size: 57344
+      nfiles: 1
+    - path: bin/build-dataset
+      hash: md5
+      md5: 42058482d539ae4045362f627e51239e
+      size: 271
+    params:
+      params.yaml:
+        data:
+          test_size: 0.2
+          column_names:
+          - body_fat
+          - sex
+          - age
+          - weight
+          - height
+          - neck
+          - chest
+          - abdomen
+          - hip
+          - thigh
+          - knee
+          - ankle
+          - biceps
+          - forearm
+          - wrist
+    outs:
+    - path: artifacts/data/processed
+      hash: md5
+      md5: 8a4bb3551c7eedc87ac126d956ee9ce8.dir
+      size: 48304
+      nfiles: 4
+  build-features:
+    cmd: bin/build-features
+    deps:
+    - path: artifacts/data/processed
+      hash: md5
+      md5: 8a4bb3551c7eedc87ac126d956ee9ce8.dir
+      size: 48304
+      nfiles: 4
+    - path: bin/build-features
+      hash: md5
+      md5: 41835c2c2680b3b2e7d8e90fa28674b8
+      size: 323
+    outs:
+    - path: artifacts/features
+      hash: md5
+      md5: f4119c47751a1458a29b15afcc1cee3a.dir
+      size: 35343
+      nfiles: 2
