@@ -2,16 +2,29 @@ stages:
   build-dataset:
     cmd: bin/build-dataset
     deps:
-      - artifacts/data/raw
-      - bin/build-dataset
+    - artifacts/data/raw
+    - bin/build-dataset
     outs:
-      - artifacts/data/processed
+    - artifacts/data/processed
     params:
-      - data
+    - data
   build-features:
     cmd: bin/build-features
     deps:
-      - artifacts/data/processed
-      - bin/build-features
+    - artifacts/data/processed
+    - bin/build-features
     outs:
-      - artifacts/features
+    - artifacts/features
+  train-model:
+    cmd: bin/train-model
+    deps:
+    - artifacts/features
+    - artifacts/data/processed
+    - bin/train-model
+    params:
+    - model
+metrics:
+- experiments/metrics.json
+plots:
+- experiments/plots/metrics:
+    x: step

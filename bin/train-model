@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+from src.config import Config
+from src.data.dataset import Dataset
+from src.models.trainer import train_model
+
+
+def main() -> None:
+    train_dataset: Dataset = Dataset.read(
+        features_path=Config.Path.FEATURES_DIR / "train.parquet", 
+        labels_path=Config.Path.DATA_DIR / "processed" / "y_train.parquet"
+    )
+    test_dataset: Dataset = Dataset.read(
+        features_path=Config.Path.FEATURES_DIR / "test.parquet", 
+        labels_path=Config.Path.DATA_DIR / "processed" / "y_test.parquet"
+    )
+    train_model(train_dataset, test_dataset)
+
+
+if __name__ == "__main__":
+    main()

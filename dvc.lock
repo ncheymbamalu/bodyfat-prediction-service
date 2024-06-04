@@ -56,3 +56,26 @@ stages:
       md5: f4119c47751a1458a29b15afcc1cee3a.dir
       size: 35343
       nfiles: 2
+  train-model:
+    cmd: bin/train-model
+    deps:
+    - path: artifacts/data/processed
+      hash: md5
+      md5: 8a4bb3551c7eedc87ac126d956ee9ce8.dir
+      size: 48304
+      nfiles: 4
+    - path: artifacts/features
+      hash: md5
+      md5: f4119c47751a1458a29b15afcc1cee3a.dir
+      size: 35343
+      nfiles: 2
+    - path: bin/train-model
+      hash: md5
+      md5: f488dc76f09c31a099f379015c99d60e
+      size: 619
+    params:
+      params.yaml:
+        model:
+          n_estimators: 10
+          max_depth: 2
+          learning_rate: 0.05
