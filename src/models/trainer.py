@@ -48,8 +48,8 @@ def train_model(train_set: Dataset, val_set: Dataset) -> None:
     object to './artifacts/models/model.json'
 
     Args:
-        train_set (Dataset): _description_
-        val_set (Dataset): _description_
+        train_set (Dataset): Object that stores the train set features and labels
+        val_set (Dataset): Object that stores the validation set features and labels
     """
     for dir_path in [Config.Path.EXPERIMENTS_DIR, Config.Path.MODELS_DIR]:
         dir_path.mkdir(parents=True, exist_ok=True)
