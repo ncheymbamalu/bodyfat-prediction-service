@@ -2,32 +2,32 @@ random_seed: 42
 data:
   test_size: 0.2
   column_names:
-    - body_fat
-    - sex
-    - age
-    - weight
-    - height
-    - neck
-    - chest
-    - abdomen
-    - hip
-    - thigh
-    - knee
-    - ankle
-    - biceps
-    - forearm
-    - wrist
+  - body_fat
+  - sex
+  - age
+  - weight
+  - height
+  - neck
+  - chest
+  - abdomen
+  - hip
+  - thigh
+  - knee
+  - ankle
+  - biceps
+  - forearm
+  - wrist
 features:
   mutual_info:
-    - weight
-    - chest
-    - abdomen
-    - hip
-    - biceps
-    - bmi
-    - bai
-    - whr
+  - weight
+  - chest
+  - abdomen
+  - hip
+  - biceps
+  - bmi
+  - bai
+  - whr
 model:
-  n_estimators: 10
-  max_depth: 2
-  learning_rate: 0.05
+  n_estimators: 20
+  max_depth: 3
+  learning_rate: 0.1

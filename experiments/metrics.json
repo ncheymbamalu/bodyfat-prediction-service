@@ -1,4 +1,4 @@
 {
-    "Train R\u00b2": 0.6814,
-    "Validation R\u00b2": 0.6046
+    "r2_train": 0.8349,
+    "r2_val": 0.6726
 }
