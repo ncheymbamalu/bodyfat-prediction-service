@@ -1,0 +1,5 @@
+outs:
+- md5: 73764e8cbfae0809155360f14e75b1f2
+  size: 22541
+  hash: md5
+  path: model.json
