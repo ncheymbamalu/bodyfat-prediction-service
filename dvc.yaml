@@ -18,8 +18,8 @@ stages:
   train-model:
     cmd: bin/train-model
     deps:
-      - artifacts/features
       - artifacts/data/processed
+      - artifacts/features
       - bin/train-model
     params:
       - model
